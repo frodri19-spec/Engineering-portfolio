@@ -380,3 +380,18 @@ img {
 #sidebar #page_list .page a:hover {
   text-decoration: underline;
 }
+/* Portfolio mobile + image cleanup */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+video,
+iframe {
+  max-width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
