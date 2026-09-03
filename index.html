@@ -1,19 +1,180 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francisco Rodriguez | Engineering Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Francisco Rodriguez | Engineering Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 12px;
+      font-size: 1.15rem;
+      color: #d1d5db;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      margin-bottom: 25px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project {
+      display: block;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #222;
+      border: 1px solid #ddd;
+      transition: 0.2s;
+    }
+
+    .project:hover {
+      transform: translateY(-3px);
+      border-color: #555;
+    }
+
+    .project h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      margin: 0;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .about {
+      margin-top: 45px;
+      text-align: center;
+    }
+
+    .about a {
+      display: inline-block;
+      padding: 13px 24px;
+      background: #111827;
+      color: white;
+      text-decoration: none;
+      border-radius: 7px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 40px 20px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      main {
+        padding: 30px 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <h1>Francisco Rodriguez</h1>
-    <h2>Mechanical Engineering Portfolio</h2>
+<header>
+  <h1>Francisco Rodriguez</h1>
+  <p>Mechanical Engineering Portfolio</p>
+</header>
 
-    <p>Welcome to my engineering portfolio.</p>
+<main>
 
+  <h2>Engineering Projects</h2>
+
+  <div class="projects">
+
+    <a class="project" href="home_a8-gear-box-design.html">
+      <h3>Gearbox Design</h3>
+      <p>Mechanical design, shaft analysis, bearings, and gearbox development.</p>
+    </a>
+
+    <a class="project" href="home_a4-motor-mount.html">
+      <h3>Motor Mount Design</h3>
+      <p>CAD design and engineering analysis of a mechanical motor mounting system.</p>
+    </a>
+
+    <a class="project" href="home_a-9-lead-screw-design.html">
+      <h3>Lead Screw Design</h3>
+      <p>Mechanical power transmission and lead screw design.</p>
+    </a>
+
+    <a class="project" href="home_a3-parametric-and-fea.html">
+      <h3>Parametric Design & FEA</h3>
+      <p>Parametric CAD modeling and finite element analysis.</p>
+    </a>
+
+    <a class="project" href="home_a7-fea-on-bracket.html">
+      <h3>Bracket FEA</h3>
+      <p>Stress analysis and simulation of a mechanical bracket.</p>
+    </a>
+
+    <a class="project" href="home_a2-truss-design.html">
+      <h3>Truss Design</h3>
+      <p>Structural design and engineering analysis of a truss system.</p>
+    </a>
+
+    <a class="project" href="home_a6-bracket-drawing-part-1.html">
+      <h3>Engineering Drawings</h3>
+      <p>Technical drawings and documentation for a mechanical bracket.</p>
+    </a>
+
+  </div>
+
+  <div class="about">
     <a href="home_about-me.html">About Me</a>
+  </div>
+
+</main>
+
+<footer>
+  Francisco Rodriguez • Mechanical Engineering
+</footer>
 
 </body>
 </html>
