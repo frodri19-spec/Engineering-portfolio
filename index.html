@@ -11,106 +11,159 @@
       box-sizing: border-box;
     }
 
+    :root {
+      --green: #005035;
+      --black: #101820;
+      --background: #f4f6f5;
+      --border: #d9dfdc;
+      --muted: #68706c;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f5f5;
-      color: #222;
+      background: var(--background);
+      color: var(--black);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
     }
 
-    header {
-      background: #111827;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
+    .page {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 65px 24px 50px;
     }
 
-    header h1 {
+    /* ---------- Intro ---------- */
+
+    .intro {
+      margin-bottom: 48px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      margin-bottom: 8px;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
     }
 
-    header p {
-      margin-top: 12px;
-      font-size: 1.15rem;
-      color: #d1d5db;
+    .subtitle {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
     }
 
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+    /* ---------- Projects ---------- */
 
-    h2 {
-      margin-bottom: 25px;
+    .section-heading {
+      margin-bottom: 20px;
+      font-size: 1.25rem;
     }
 
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
     }
 
     .project {
       display: block;
+      min-width: 0;
+      padding: 22px 24px;
       background: white;
-      padding: 25px;
-      border-radius: 10px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      color: inherit;
       text-decoration: none;
-      color: #222;
-      border: 1px solid #ddd;
-      transition: 0.2s;
+      transition:
+        border-color 0.15s ease,
+        transform 0.15s ease;
     }
 
     .project:hover {
-      transform: translateY(-3px);
-      border-color: #555;
+      border-color: var(--green);
+      transform: translateY(-2px);
     }
 
-    .project h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
+    .project-number {
+      margin-bottom: 5px;
+      color: var(--green);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .project h2 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      line-height: 1.3;
     }
 
     .project p {
       margin: 0;
-      color: #666;
-      line-height: 1.5;
-    }
-
-    .about {
-      margin-top: 45px;
-      text-align: center;
-    }
-
-    .about a {
-      display: inline-block;
-      padding: 13px 24px;
-      background: #111827;
-      color: white;
-      text-decoration: none;
-      border-radius: 7px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      color: #777;
+      color: var(--muted);
       font-size: 0.9rem;
     }
 
-    @media (max-width: 600px) {
-      header {
-        padding: 40px 20px;
+    /* ---------- Bottom links ---------- */
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .bottom a {
+      color: var(--green);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .bottom a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 50px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    /* ---------- Phone ---------- */
+
+    @media (max-width: 650px) {
+      .page {
+        padding: 42px 17px 35px;
       }
 
-      header h1 {
-        font-size: 2rem;
+      .intro {
+        margin-bottom: 32px;
       }
 
-      main {
-        padding: 30px 16px;
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .project {
+        padding: 19px 20px;
+      }
+
+      .bottom {
+        flex-wrap: wrap;
       }
     }
   </style>
@@ -118,63 +171,79 @@
 
 <body>
 
-<header>
-  <h1>Francisco Rodriguez</h1>
-  <p>Mechanical Engineering Portfolio</p>
-</header>
+  <main class="page">
 
-<main>
+    <section class="intro">
+      <div class="eyebrow">Mechanical Engineering Portfolio</div>
 
-  <h2>Engineering Projects</h2>
+      <h1>Francisco Rodriguez</h1>
 
-  <div class="projects">
+      <p class="subtitle">
+        Selected mechanical design, CAD, simulation, and engineering analysis projects.
+      </p>
+    </section>
 
-    <a class="project" href="home_a8-gear-box-design.html">
-      <h3>Gearbox Design</h3>
-      <p>Mechanical design, shaft analysis, bearings, and gearbox development.</p>
-    </a>
+    <section>
 
-    <a class="project" href="home_a4-motor-mount.html">
-      <h3>Motor Mount Design</h3>
-      <p>CAD design and engineering analysis of a mechanical motor mounting system.</p>
-    </a>
+      <h2 class="section-heading">Projects</h2>
 
-    <a class="project" href="home_a-9-lead-screw-design.html">
-      <h3>Lead Screw Design</h3>
-      <p>Mechanical power transmission and lead screw design.</p>
-    </a>
+      <div class="projects">
 
-    <a class="project" href="home_a3-parametric-and-fea.html">
-      <h3>Parametric Design & FEA</h3>
-      <p>Parametric CAD modeling and finite element analysis.</p>
-    </a>
+        <a class="project" href="home_a8-gear-box-design.html">
+          <div class="project-number">01</div>
+          <h2>Gearbox Design</h2>
+          <p>Shaft design, bearings, mechanical analysis, and gearbox development.</p>
+        </a>
 
-    <a class="project" href="home_a7-fea-on-bracket.html">
-      <h3>Bracket FEA</h3>
-      <p>Stress analysis and simulation of a mechanical bracket.</p>
-    </a>
+        <a class="project" href="home_a4-motor-mount.html">
+          <div class="project-number">02</div>
+          <h2>Motor Mount Design</h2>
+          <p>CAD development and mechanical design of a motor mounting system.</p>
+        </a>
 
-    <a class="project" href="home_a2-truss-design.html">
-      <h3>Truss Design</h3>
-      <p>Structural design and engineering analysis of a truss system.</p>
-    </a>
+        <a class="project" href="home_a-9-lead-screw-design.html">
+          <div class="project-number">03</div>
+          <h2>Lead Screw Design</h2>
+          <p>Mechanical power transmission and lead screw engineering.</p>
+        </a>
 
-    <a class="project" href="home_a6-bracket-drawing-part-1.html">
-      <h3>Engineering Drawings</h3>
-      <p>Technical drawings and documentation for a mechanical bracket.</p>
-    </a>
+        <a class="project" href="home_a3-parametric-and-fea.html">
+          <div class="project-number">04</div>
+          <h2>Parametric Design & FEA</h2>
+          <p>Parametric CAD modeling and finite element analysis.</p>
+        </a>
 
-  </div>
+        <a class="project" href="home_a7-fea-on-bracket.html">
+          <div class="project-number">05</div>
+          <h2>Bracket FEA</h2>
+          <p>Stress analysis and simulation of a mechanical bracket.</p>
+        </a>
 
-  <div class="about">
-    <a href="home_about-me.html">About Me</a>
-  </div>
+        <a class="project" href="home_a2-truss-design.html">
+          <div class="project-number">06</div>
+          <h2>Truss Design</h2>
+          <p>Structural design and analysis of a truss system.</p>
+        </a>
 
-</main>
+        <a class="project" href="home_a6-bracket-drawing-part-1.html">
+          <div class="project-number">07</div>
+          <h2>Engineering Drawings</h2>
+          <p>Detailed technical drawings and mechanical documentation.</p>
+        </a>
 
-<footer>
-  Francisco Rodriguez • Mechanical Engineering
-</footer>
+      </div>
+
+    </section>
+
+    <div class="bottom">
+      <a href="home_about-me.html">About Me →</a>
+    </div>
+
+    <footer>
+      Francisco Rodriguez · Mechanical Engineering
+    </footer>
+
+  </main>
 
 </body>
 </html>
