@@ -715,5 +715,276 @@ body {
 
   #header h1 {
     font-size: 1.45rem;
+    /* =========================================================
+   DOCUMENT-STYLE PORTFOLIO OVERRIDE
+   ========================================================= */
+
+/* More compact overall scale */
+html,
+body {
+  background: #eef1ef;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+/* Keep a desktop/document-style canvas */
+#container {
+  width: 100%;
+  max-width: 1180px;
+  min-width: 960px;
+  margin: 0 auto;
+  padding: 24px 0 40px;
+}
+
+/* ---------------------------------------------------------
+   Project title becomes part of the document
+   --------------------------------------------------------- */
+
+#header {
+  clear: none;
+  float: left;
+  width: calc(100% - 330px);
+  height: auto;
+  min-height: 0;
+
+  margin: 0 0 0 24px;
+  padding: 24px 30px 8px;
+
+  box-sizing: border-box;
+
+  background: white;
+  color: #101820;
+
+  border: 1px solid #d9dfdc;
+  border-top: 5px solid #005035;
+  border-bottom: 0;
+
+  border-radius: 12px 12px 0 0;
+}
+
+/* Small personal branding */
+#header::before {
+  content: "FR • MECHANICAL ENGINEERING PORTFOLIO";
+
+  display: block;
+  margin-bottom: 8px;
+
+  color: #005035;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+/* Project title */
+#header h1 {
+  margin: 0;
+
+  color: #101820;
+
+  font-size: 1.65rem;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------
+   Home button directly under title
+   --------------------------------------------------------- */
+
+#nav-level2 {
+  clear: none;
+  float: left;
+
+  width: calc(100% - 330px);
+  min-height: 0;
+
+  margin: 0 0 0 24px;
+  padding: 0 30px 14px;
+
+  box-sizing: border-box;
+
+  background: white;
+
+  border-left: 1px solid #d9dfdc;
+  border-right: 1px solid #d9dfdc;
+}
+
+#nav-level2 ul {
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+#nav-level2 a {
+  padding: 6px 14px;
+
+  color: #005035;
+  background: #f5f8f7;
+
+  border: 1px solid #b7c6c0;
+  border-radius: 6px;
+
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+#nav-level2 a:hover {
+  color: white;
+  background: #005035;
+  border-color: #005035;
+}
+
+/* ---------------------------------------------------------
+   Main document body
+   --------------------------------------------------------- */
+
+#content {
+  clear: none;
+  float: left;
+
+  width: calc(100% - 330px);
+
+  margin: 0 0 36px 24px;
+  padding: 12px 30px 32px;
+
+  box-sizing: border-box;
+
+  background: white;
+
+  border: 1px solid #d9dfdc;
+  border-top: 0;
+
+  border-radius: 0 0 12px 12px;
+
+  font-size: 15px;
+}
+
+/* Section headings feel more like a report */
+#page_content h2 {
+  margin-top: 26px;
+  margin-bottom: 8px;
+  padding-left: 10px;
+
+  color: #005035;
+
+  border-left: 3px solid #A49665;
+
+  font-size: 1.18rem;
+  line-height: 1.35;
+}
+
+#page_content h3 {
+  margin-top: 22px;
+  margin-bottom: 7px;
+
+  font-size: 1.05rem;
+}
+
+/* Slightly tighter paragraphs */
+#page_content p {
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+/* ---------------------------------------------------------
+   Images — less overwhelming
+   --------------------------------------------------------- */
+
+.attachment img,
+#page_content img {
+  display: block;
+
+  max-width: 92%;
+  height: auto;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 5px;
+  border: 1px solid #e0e4e2;
+}
+
+/* ---------------------------------------------------------
+   Smaller navigation panel
+   --------------------------------------------------------- */
+
+#sidebar,
+#floating_sidebar {
+  float: right;
+
+  width: 258px;
+
+  margin: 0 24px 30px 0;
+  padding: 17px;
+
+  box-sizing: border-box;
+
+  background: white;
+
+  border: 1px solid #d9dfdc;
+  border-top: 4px solid #005035;
+
+  border-radius: 10px;
+}
+
+#sidebar .section_header {
+  margin-bottom: 9px;
+  padding-bottom: 9px;
+}
+
+#sidebar .section_header::after {
+  font-size: 0.95rem;
+}
+
+#sidebar #page_list .page {
+  margin: 2px 0;
+}
+
+#sidebar #page_list .page a {
+  padding: 6px 9px;
+
+  font-size: 0.82rem;
+  line-height: 1.35;
+
+  border-radius: 5px;
+}
+
+/* Current project */
+#sidebar #page_list .page.current a {
+  background: #005035;
+  color: white;
+}
+
+/* Remove the previous mobile stacking behavior.
+   Project pages intentionally retain a document-like layout
+   that users can zoom when viewing on a phone. */
+@media (max-width: 900px) {
+
+  #container {
+    min-width: 960px;
+  }
+
+  #header,
+  #nav-level2,
+  #content {
+    float: left;
+    width: calc(100% - 330px);
+    margin-left: 24px;
+  }
+
+  #sidebar,
+  #floating_sidebar {
+    float: right;
+    width: 258px;
+    margin: 0 24px 30px 0;
+  }
+
+  #sidebar #page_list {
+    display: block;
+  }
+}
   }
 }
