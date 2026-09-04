@@ -988,3 +988,8 @@ body {
 }
   }
 }
+/* Prevent long links from making project pages wider */
+#page_content a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
